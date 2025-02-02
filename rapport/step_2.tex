@@ -1,6 +1,7 @@
 \section{Étape 2 : Extension du Modèle d'Assignation}
 
 Dans cette deuxième étape, nous explorons des extensions du modèle développé dans l'étape 1. Nous cherchons à tester la capacité du modèle initial à résoudre des instances plus complexes et à explorer des configurations supplémentaires, notamment l'affectation partielle des briques et l'impact de l'augmentation de la demande, caractérisé par la création d'un nouveau poste de représentant.
+Sur les graphiques suivants, z est la somme des distances parcourues par chacun.
 
 \subsection{Résolution des instances 100 briques / 10 SRs}
 Nous commençons par analyser la capacité du modèle initial à résoudre des instances où 100 briques doivent être assignées à 10 représentants de vente (SRs). L'objectif est de vérifier si notre modèle est capable de traiter cette augmentation de la taille du problème et de produire des solutions efficaces. On doit alors pre processer les données pour obtenir les distances entre les briques et les SRs dans le même format que l'étape 1.
@@ -35,7 +36,7 @@ En effet, nous sommes passées de 1000 variables binaires (0 ou 1) à 1000 varia
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{Images/step_2/step_2-new-representative-location.png}
+    \includegraphics[width=\textwidth]{Images/step_2/step_2-pareto_front.png}
     \caption{solutions avec affectation partielle}
     \label{fig:new_SR_location}
 \end{figure}
@@ -62,7 +63,7 @@ Il faudra alors rajouter et modifier des contraintes, ainsi que rajouter une col
         \centering
         \begin{subfigure}[b]{0.48\textwidth}
             \centering
-            \includegraphics[width=\textwidth]{Images/step_2/step_2-pareto_front.png}
+            \includegraphics[width=\textwidth]{Images/step_2/step-2-pareto_front.png}
             \caption{Solutions avec affectation partielle et nouveau SR}
         \end{subfigure}
         \hfill
@@ -77,11 +78,8 @@ Il faudra alors rajouter et modifier des contraintes, ainsi que rajouter une col
 
     
 \subsubsection{Résultats de l'analyse}
-Après l'augmentation de la demande et l'ajout du nouveau représentant, le modèle a déterminé que le bureau du nouveau représentant devait être localisé à la 99 ieme brique, quelque soit notre emplacement sur le front de pareto.
-
-
-
-La localisation du bureau optimal est déterminée en fonction des zones les plus sollicitées par la demande accrue, afin de minimiser la distance totale parcourue.
+Après l'augmentation de la demande et l'ajout du nouveau représentant, le modèle a déterminé que le bureau du nouveau représentant devait être localisé à la 100 ieme brique, quelque soit notre choix de solutions sur le front de pareto.
+Un nouveau représentant permet de baisser les valeurs de charges de travail maximales et de distance parcourue.
 
 \subsection{Conclusion}
 Dans cette étape, nous avons exploré plusieurs extensions du modèle initial, notamment la résolution d'instances plus grandes, l'affectation partielle des briques et l'impact de l'augmentation de la demande. Les résultats montrent que le modèle peut s'adapter à des problèmes de plus grande envergure, et que l'affectation partielle ainsi que l'ajout de nouveaux représentants peuvent contribuer à une meilleure répartition des charges de travail et à une minimisation de la distance totale, mais amène à une complexité de résolution grandissant énormément.
