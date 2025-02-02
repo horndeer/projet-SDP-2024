@@ -17,11 +17,18 @@ L'objectif de minimisation de la distance est donné par :
 \begin{equation}
     \min \sum_{i,j} d_{ij} x_{ij}
 \end{equation}
+Cet objectif permet de minimiser la distance parcourue par l'ensemble des représentants, sans prendre en compte si la distance parcourue est équilibrée.
 
 L'objectif de minimisation de la perturbation est donné par :
 \begin{equation}
     \min \sum_{i} p_i x_{ij}
 \end{equation}
+
+Nous avons de même essayé un second objectif de minimisation pour la distance :
+\begin{equation}
+    \min \max \sum_{i,j} d_{ij} x_{ij}
+\end{equation}
+Cet objectif permet de rendre la répartition plus équitable, car on minimise la distance parcourue par le représentant qui en parcourt le maximum. Chaque représentant aura alors un travail plus équitable.
 
 Sous contraintes :
 \begin{itemize}
@@ -44,6 +51,7 @@ La solution pour la minimisation mono-objective de la nouvelle charge de travail
 
 La solution optimale du mono-objectif de minimisation de la distance totale donne une valeur de 56. 
 
+Pour pouvoir transformer l'optimisation non linéaire du Min(Max), il suffit seulement de rajouter une variable $z$ qui est le maximum de toutes les distances parcourues par les représentants. On peut alors ajouter une contrainte pour que $z$ soit supérieur à toutes les distances parcourues par les représentants.
 \subsection{Exploration des solutions non-dominées}
 Une approche par contrainte-épsilon est utilisée pour générer l’ensemble des solutions non-dominées. L’idée est d’imposer des contraintes successives sur l’un des objectifs (la distance totale)  tout en minimisant l’autre (disruption).
 

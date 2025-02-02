@@ -6,7 +6,6 @@
 \usepackage[skip=12pt, indent=30pt]{parskip}
 \usepackage[english]{babel}
 \usepackage[autolanguage]{numprint}
-\usepackage[backend=biber,style=apa,sorting=nyt]{biblatex}
 \usepackage[font=small,labelfont=bf]{caption}
 \usepackage[margin=2.5cm]{geometry}
 \usepackage{booktabs}
@@ -15,6 +14,7 @@
 \usepackage{hyperref}
 \def\frenchtablename{Tableau}
 \usepackage{caption}
+\usepackage{xcolor}
 \usepackage{subcaption}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{listings}
@@ -25,7 +25,7 @@
 \usepackage{minted} 
 %\usepackage{enumitem}
 
-\addbibresource{biblio.bib}
+
 
 \definecolor{grey}{RGB}{220, 220, 240}
 \definecolor{personalizedColor}{RGB}{0, 163, 166}
@@ -97,6 +97,10 @@
     \newpage
 
     \input{step_1}
+    \newpage
+
+    \input{step_2}
+
     \newpage
 
     \input{step_3}
